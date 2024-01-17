@@ -17,18 +17,6 @@ import IconBxsBadgeCheck from "./Badge";
 import useQuestions from "../../hook/useQuestions";
 import { MyTimer } from "../../components/MyTimer";
 
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "whitesmoke",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
-
 export const Quiz = () => {
   const [activeQuestion, setActiveQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState("");
@@ -86,7 +74,7 @@ export const Quiz = () => {
 // Timer
 
 const time = new Date();
-  time.setSeconds(time.getSeconds() + 180); // 10 minutes timer
+  time.setSeconds(time.getSeconds() + 300); // 5 minutes timer
 
   // Modal hooks and functions
   // const [open, setOpen] = useState(false);
