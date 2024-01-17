@@ -9,14 +9,13 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
-import Modal from "@mui/material/Modal";
-// import { useSelector } from "react-redux";
+// import Modal from "@mui/material/Modal";
 
 import { customTheme } from "../../shared/assets/customTheme";
-import { QUIZ } from "../../constants/data";
+// import { QUIZ } from "../../constants/data";
 import IconBxsBadgeCheck from "./Badge";
-import { shuffleAnswerOptions } from "../../shared/utils/shuffleAnswer";
 import useQuestions from "../../hook/useQuestions";
+import { MyTimer } from "../../components/MyTimer";
 
 const style = {
   position: "absolute",
@@ -84,13 +83,16 @@ export const Quiz = () => {
     setChecked(false);
   };
 
-  // Modal hooks and functions
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+// Timer
 
-  // Payload
-  // const forms = useSelector((state) => state.forms)
+const time = new Date();
+  time.setSeconds(time.getSeconds() + 180); // 10 minutes timer
+
+  // Modal hooks and functions
+  // const [open, setOpen] = useState(false);
+  // const handleOpen = () => setOpen(true);
+  // const handleClose = () => setOpen(false);
+
 
   return (
     <ThemeProvider theme={customTheme}>
@@ -110,6 +112,8 @@ export const Quiz = () => {
                 {!showResult ? (
                   <Box>
                     <Box>
+                    <MyTimer expiryTimestamp={time} />
+
                       <h2>
                         Question: {activeQuestion + 1}
                         <span>/{questions.length}</span>
@@ -175,7 +179,7 @@ export const Quiz = () => {
                       Go to dashboard
                     </Button>
 
-                    <Button onClick={handleOpen}>See Results</Button>
+                    {/* <Button onClick={handleOpen}>See Results</Button>
                     <Modal
                       open={open}
                       onClose={handleClose}
@@ -190,7 +194,7 @@ export const Quiz = () => {
                         >
                           Results
                         </Typography>
-                        {/* <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                           <Box sx={{ backgroundColor: "whitesmoke" }}>
                             <h3>Overall {(result.score / 25) * 100}%</h3>
                             <p>
@@ -207,9 +211,9 @@ export const Quiz = () => {
                               Wrong Answers: <span>{result.wrongAnswers}</span>
                             </p>
                           </Box>
-                        </Typography> */}
+                        </Typography>
                       </Box>
-                    </Modal>
+                    </Modal> */}
                   </Box>
                 )}
               </Box>

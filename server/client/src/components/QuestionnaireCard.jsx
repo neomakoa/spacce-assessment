@@ -8,6 +8,7 @@ const QuestionnaireCard = () => {
     <>
         <Paper
           sx={{
+            my: 3,
             p: 4,
             border: 1,
             borderColor: "slategray",

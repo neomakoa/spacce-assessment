@@ -46,7 +46,7 @@ export const customTheme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          height: "60vh",
+          height: "100vh",
           marginTop: "5vh",
           marginBottom: "5vh",
           marginRight: "15vw",
