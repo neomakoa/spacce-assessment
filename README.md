@@ -12,8 +12,9 @@ This application demonstrates a full-stack architecture using React for the fron
 ## Setup
 
 1. Clone the repository to your local machine:
+gh repo clone neomakoa/spacce-assessment
 
-2. Change into the project directory:
+3. Change into the project directory:
 cd spacce-assessment/server  (server)
 cd spacce-assessment/server/client  (client)
 
